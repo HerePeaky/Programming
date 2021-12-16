@@ -1,9 +1,0 @@
-double NewTon(double x, double eps = 1e-6) {
-    double zn = 1., zp = 0.;
-    while (abs(zn - zp) > eps)
-    {
-        zp = zn;
-        zn = zp - (zp * zp - x) / (2 * zp);
-    }
-    return zn;
-}
