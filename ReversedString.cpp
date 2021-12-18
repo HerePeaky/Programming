@@ -1,11 +1,10 @@
 #include <string>
-std::string reverseString (std::string ss )
-{
+using namespace std ; 
 
-  std::string k = "";
-  for (int i = ss.length()-1; i >= 0; i--)
-  {  
-    k = k + ss[i];
+string reverseString (string str )
+{
+  for(int i = 0; i < (int)str.length() / 2; ++ i){
+    std::swap(str[i], str[str.length() - 1 - i]);
   }
-  return k ;
-  }
+  return str ;
+}
