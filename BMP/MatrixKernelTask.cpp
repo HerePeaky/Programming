@@ -24,6 +24,7 @@ void KernelFilterMatrix()
         delete[] kernel[i];
         }
     delete[] kernel;
+    deleteRgbImg(ImgCopy);
 }
 int main()
 {
