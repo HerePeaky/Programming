@@ -20,6 +20,9 @@ void KernelFilterMatrix()
         }
     writeRgbImg("kids_filtered_matrixkernel.bmp", convolution(img, kern_sz, kernel));
     deleteRgbImg(img);
+    for(int i = 0; i < kern_size; ++i){
+        delete[] kernel[i];
+        }
     delete[] kernel;
 }
 int main()
