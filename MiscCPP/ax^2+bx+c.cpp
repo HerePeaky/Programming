@@ -10,7 +10,10 @@ int main() {
     std::cin >> c;
 
     D = (b * b) - (4 * a * c);
-    if (a == 0) {
+    if(a == 0 and b == 0){
+        std::cout << "There is not a equation!";
+    }
+    else if (a == 0) {
         std::cout << "Only one answer: x = " << -c / b;
     } else if (D > 0)
         {
