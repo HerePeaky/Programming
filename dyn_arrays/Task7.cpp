@@ -1,26 +1,31 @@
 #include<iostream>
 
-void shiftArray(int* M, int n, int k) {
-    for (int i = M[0]; i < n; ++i) {
+int* shiftArray(int* M, int n, int k) {
+    int* F = new int[n];
+    if(k > n)
+        k %= n;
+    for (size_t i = 0; i < n; ++i) {
         if (i < k) {
-            M[n - k + i] = i;
+            F[n - k + i] = M[i];
         }
         else {
-            M[i - k] = i;
+            F[i - k] = M[i];
         }
     }
+    return F;
 }
 
 int main() {
     int n, step;
     std::cin >> n >> step;
-    int* x = new int [n];
-    for (int i = 0; i < n; ++i) {
-        x[i] = i;
+    int* x = new int[n];
+    for (size_t i = 0; i < n; ++i) {
+        std::cin >> x[i];
     }
-    shiftArray(x, n, step);
+    int* answer = shiftArray(x, n, step);
     for (int i = 0; i < n; ++i) {
-        std::cout << x[i] << " ";
+        std::cout << answer[i] << " ";
     }
     delete[] x;
+    delete[] answer;
 }
