@@ -2,7 +2,7 @@
 #include<string>
 double task4(double x, double eps = 1e-6) {
     double x1 = 1., x2 = 0.;
-    while (abs(x1 - x2) > eps)
+    while (std::abs(x1 - x2) > eps)
     {
         x2 = x1;
         x1 = x2 - (x2 * x2 - x) / (2 * x2);
